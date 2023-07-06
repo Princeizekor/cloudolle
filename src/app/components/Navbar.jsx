@@ -1,4 +1,4 @@
-import Image from 'next/image';
+'use client'
 import React, { useState } from 'react';
 import { styled } from 'styled-components';
 
@@ -44,7 +44,7 @@ function Navbar() {
   }
   return (
     <Wrapper>
-      <Image src='/images/Cloudolle logo.png' width={'80'} height={'80'} />
+      <img src='/images/Cloudolle logo.png'/>
       <ul className='buttons' style={!isOpen ? {height: 'auto', left: 0} : {left: '-100%', overflow: 'hidden'}}>
         <li className='sol' >
           <p onClick={toggleDrop}>Solutions</p>
@@ -118,7 +118,10 @@ const Wrapper = styled.div`
   padding: 0px 50px;
   background-color: #FFF;
   z-index: 100000000;
-
+// img {
+//   width: 80px;
+//   height: 80px;
+// }
   .buttons {
     position: relative;
     cursor: pointer;
