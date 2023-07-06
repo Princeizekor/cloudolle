@@ -44,6 +44,7 @@ function Technologies() {
   ]
   return (
     <Wrapper>
+      <div className="wrapper">
       <div className='headText'>
         <h1>Technologies</h1>
         <p className='headText2'>{Text}</p>
@@ -67,12 +68,16 @@ function Technologies() {
         }
         <img src="/images/cooliconcircle.png" alt="arrow-forward" className='arrow' />
       </div>
+      </div>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div `
-  max-width: 1440px;
+width: 100%;
+background: #39C;
+  .wrapper {
+    max-width: 1440px;
   margin: 0% auto;
   height: auto;
   padding: 50px 100px;
@@ -82,7 +87,7 @@ const Wrapper = styled.div `
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  background: #39C;
+  }
 
 .headText {
   display: flex;
@@ -195,7 +200,9 @@ const Wrapper = styled.div `
   height: 28px;
 }
 @media (max-width: 1023px) {
-  padding: 30px;
+  .wrapper {
+    padding: 30px;
+  }
 
 .headText {
   width: 70%;

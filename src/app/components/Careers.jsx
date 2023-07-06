@@ -53,6 +53,7 @@ function Careers() {
     ]
     return (
         <Wrapper>
+            <div className="wrapper">
             <div className='headText'>
                 <h1>Careers at Cloudolle</h1>
                 <p className='headText2'>{Text}</p>
@@ -74,22 +75,26 @@ function Careers() {
                     )
                 }
             </div>
+            </div>
         </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
-max-width: 1440px;
-margin: 0% auto;
-    height: auto;
-    padding: 100px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    background: #39C;
+width: 100%;
+background: #39C;
+.wrapper {
+  max-width: 1440px;
+  margin: 0% auto;
+      height: auto;
+      padding: 100px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+}
 
 .headText {
     display: flex;
@@ -195,9 +200,10 @@ button {
     bottom: 50px;
 }
 @media (max-width: 1023px) {
-    padding: 30px;
+    .wrapper {
+      padding: 30px;
     height: auto;
-
+    }
     .headText {
       width: 70%;
     }
@@ -235,7 +241,9 @@ button {
     }
   }
 @media (max-width: 767px) {
-    padding: 30px;
+    .wrapper {
+      padding: 30px;
+    }
 
     .headText {
       width: 100%;
@@ -283,7 +291,9 @@ button {
   }
 
   @media (max-width: 560px) {
-    padding: 30px;
+    .wrapper {
+      padding: 30px;
+    }
 
     .headText {
       width: 90%;

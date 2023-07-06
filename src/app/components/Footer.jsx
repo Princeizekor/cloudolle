@@ -48,6 +48,7 @@ function Footer() {
   }
   return (
     <Wrapper>
+      <div className="all">
       <div className="wrapper">
         <div className="solution">
           <p className='top'>{Solution.solution}</p>
@@ -98,16 +99,20 @@ function Footer() {
         <img src="/images/socialssocial.png" alt="footer logo" />
         <p>© 2022 Cloudolle. All rights reserved. </p>
       </div>
+      </div>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-max-width: 1440px;
-margin: 0% auto;
-    height: auto;
-    padding: 50px 120px;
-    background: #01162E;
+width: 100%;
+background: #01162E;
+.all {
+  max-width: 1440px;
+  margin: 0% auto;
+      height: auto;
+      padding: 50px 120px;
+}
     .wrapper {
       display: inline-flex;
       align-items: flex-start;
@@ -149,11 +154,15 @@ font-weight: 400;
 line-height: 6.167px;
     }
     @media (max-width: 1023px) {
-      padding: 40px;
+      .all {
+        padding: 40px;
+      }
     }
   
     @media (max-width: 767px) {
-      padding: 30px;
+      .all {
+        padding: 30px;
+      }
   
       .wrapper {
         gap: 40px;
@@ -169,7 +178,9 @@ line-height: 6.167px;
     }
   
     @media (max-width: 560px) {
-      padding: 20px;
+      .all {
+        padding: 20px;
+      }
   
       .wrapper {
         flex-direction: column;

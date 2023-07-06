@@ -11,6 +11,7 @@ function Distribution() {
     const Text5 = `We tailor our methodology to fit your unique requirements, with a strong emphasis on establishing a solid foundation. By continuously experimenting with new delivery techniques, we strive to constantly enhance the quality of our service.`
     return (
         <Wrapper>
+            <div className="wrapper">
             <h2 className='text1'>{Text1}</h2>
             <div className='TextWrap'>
             <h1 className='text2'>{Text2}</h1>
@@ -21,19 +22,23 @@ function Distribution() {
                 <h1 className='text2'>{Text4}</h1>
                 <p className='text3'>{Text5}</p>
             </div>
+            </div>
         </Wrapper>
     )
 }
 
 const Wrapper = styled.div `
-max-width: 1440px;
-margin: 0% auto;
+width: 100%;
+background-color: black;
+    .wrapper {
+      max-width: 1440px;
+    margin: 0% auto;
     justify-content: space-between;
     align-items: center;
     padding: 100px;
-    background-color: black;
     height: 600px;
     display: flex;
+    }
 
 .text1 {
     color: #FFF;
@@ -73,8 +78,10 @@ font-weight: 300;
 line-height: normal;
 }
 @media (max-width: 1023px) {
-    height: auto;
+    .wrapper {
+      height: auto;
     padding: 30px;
+    }
 
     .text1 {
       font-size: 22px;
@@ -116,7 +123,9 @@ line-height: normal;
     }
   }
   @media (max-width: 560px) {
-    flex-direction: column;
+    .wrapper {
+      flex-direction: column;
+    }
     .text1 {
       font-size: 20px;
     }

@@ -90,7 +90,7 @@ function Companies() {
 const Wrapper = styled.div`
     max-width: 1440px;
     margin: 0% auto;
-    height: 660px;
+    height: auto;
     padding: 80px;
     display: flex;
     flex-direction: column;

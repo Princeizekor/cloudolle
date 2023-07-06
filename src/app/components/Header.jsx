@@ -46,6 +46,7 @@ function Header() {
     }, 5000);
     return (
         <Wrapper>
+            <div className="wrapper">
             {
                 filteredData.map((item, i) =>
                     <div className="slide-wrapper" style={{ backgroundImage: `url('${item.img}')` }} key={i}>
@@ -59,14 +60,19 @@ function Header() {
                     </div>
                 )
             }
+            </div>
         </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
-            height: 700px;
+width: 100%;
+background-color: black;
+            .wrapper {
+                height: 700px;
             max-width: 1440px;
             margin: 0% auto;
+            }
         .slide-wrapper {
             position: relative;
             width: 100%;
@@ -113,9 +119,11 @@ const Wrapper = styled.div`
             border-radius: 50%;
         }
         @media (max-width: 1023px) {
-            height: 50vh;
+            .wrapper {
+                height: 50vh;
             width: 100%;
             margin: 0%;
+            }
         .slide-wrapper {
             height: 50vh;
             padding: 0px 150px;
@@ -136,12 +144,17 @@ const Wrapper = styled.div`
         }
         }
         @media (max-width: 767px) {
-            height: 300px;
+            .wrapper {
+                height: 300px;
+            }
         .slide-wrapper {
             height: 300px;
             padding: 0px 50px;
         }
         @media (max-width: 560px) {
+            .slide-wrapper {
+                padding: 0px 30px;
+            }
         .title {
             margin-bottom: 20px;
             font-size: 30px;

@@ -35,6 +35,7 @@ function Navbar() {
   const imgs = '/images/hamburger.png'
   const [isOpen, setIsOpen] = useState(false);
   const [open, setOpen] = useState(false);
+  const [openDrop, setOpenDrop] = useState(false);
 
   const toggleDropdown =()=> {
     setIsOpen(!isOpen);
@@ -48,7 +49,7 @@ function Navbar() {
       <ul className='buttons' style={!isOpen ? {height: 'auto', left: 0} : {left: '-100%', overflow: 'hidden'}}>
         <li className='sol' >
           <p onClick={toggleDrop}>Solutions</p>
-          <div className='solutions' style={!open ? {height: 'auto', left: 0} : {height: '0%', left: '-100%', overflow: 'hidden'}}>
+          <div className='solutions' style={open ? {display: 'flex', height: 'auto', left: 0} : {height: '0%', left: '-100%', overflow: 'hidden'}}>
             <ul>
               <li>{Solution.eGovernor}</li>
               <li>{Solution.cloud}</li>
@@ -66,8 +67,8 @@ function Navbar() {
         </li>
 
         <li className='tech'>
-          Technologies
-          <div className='technologies'style={!isOpen ? {height: 'auto', left: 0} : {left: '-100%', overflow: 'hidden'}}>
+        <p onClick={toggleDrop}>Technologies</p>
+          <div className='technologies'style={open ? {display: 'flex', height: 'auto', left: 0} : {height: '0%', left: '-100%', overflow: 'hidden'}}>
             <ul>
               <li>{Tech.overview}</li>
               <li>{Tech.micro1}</li>
@@ -160,11 +161,11 @@ const Wrapper = styled.div`
     height: 200px;
     left: -150px;
   }
-  .indus:hover .industry,
-  .tech:hover .technologies,
-  .sol:hover .solutions {
-    display: flex;
-  }
+  // .indus:hover .industry,
+  // .tech:hover .technologies,
+  // .sol:hover .solutions {
+  //   display: flex;
+  // }
   .industry ul,
   .technologies ul,
   .solutions ul {

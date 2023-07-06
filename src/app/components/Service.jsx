@@ -60,6 +60,12 @@ With a proven track record of success, including the completion of numerous proj
               <img src={item.img} alt="service-image" />
             </section>
             <p>{item.title}</p>
+            <button className="colors">
+            <span className="brown"></span>
+            <span className="red"></span>
+            <span className="yellow"></span>
+            </button>
+            <img src="/images/coolicons.png" alt="arrow" className="arrow"/>
           </div>
         ))}
       </Services>
@@ -68,7 +74,7 @@ With a proven track record of success, including the completion of numerous proj
 }
 
 const Wrapper = styled.div`
-  height: 1000px;
+  height: auto;
   max-width: 1440px;
   margin: 0% auto;
   padding: 50px;
@@ -128,7 +134,7 @@ const Services = styled.div`
       rgba(51, 153, 204, 0.7) 0%,
       rgba(51, 153, 204, 0.7) 100%
     );
-    height: 200px;
+    height: 240px;
     
     img {
       width: 100%;
@@ -142,7 +148,7 @@ const Services = styled.div`
     font-size: 26px;
     font-style: normal;
     font-weight: 500;
-    padding: 15px 40px 15px 20px;
+    padding: 15px 40px 30px 20px;
     transition: 0.5s all ease;
   }
   &:hover {
@@ -161,12 +167,46 @@ const Services = styled.div`
         rgba(51, 153, 204, 0.7) 100%
       );
       overflow: hidden;
+      bottom: 0%;
     height: 100%;
   }
   &:hover p {
     transform: translateY(-180px);
     color: #FFF;
   }
+ }
+
+ .colors {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 35%;
+  padding: 0px 0px 15px 20px;
+  border: none;
+  background: transparent;
+  position: absolute;
+  bottom: 0;
+  transition: 0.5s all ease;
+  span {
+    width: 10px;
+    height: 2.5px;
+  }
+  .brown {
+    background: #8d99ae;
+  }
+  .red {
+    background: #ff0071;
+  }
+  .yellow {
+    background: #fff800;
+  }
+}
+
+ .arrow {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0px 30px 30px 0px;
  }
  
   @media (max-width: 1023px) {
@@ -189,6 +229,9 @@ const Services = styled.div`
   div {
   section {
   height: 100px;
+  }
+  p {
+    font-size: 15px;
   }
   }
   }

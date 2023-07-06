@@ -32,19 +32,24 @@ function Reviews() {
 
     const filteredData = Data.filter(item => item.id === data);
 
-    const handleClick = () => {
-        data === 3 ? setData(1) : setData(data + 1)
+    const handleNext = () => {
+      data == 3 ? setData(1) : setData(data + 1)
+    }
+
+    const handlePrev = () => {
+      data == 1 ? setData(3) : setData(data - 1)
     }
     
     return (
         <Wrapper>
+            <div className="all">
             <div className="wrapper">
                 <div className="content1">
                     <h1 className='client-text'>See what our clients say about us, drawing from our experience and impact.</h1>
                     <button className="client-success">Read client success stories <img src={cooliconlack} alt="cooliconlack" /></button>
                 </div>
                 <div className="content2">
-                <img src="/images/cooliconabblue.png" onClick={handleClick} alt="Previous" className='arrow'/>
+                <img src="/images/cooliconabblue.png" onClick={handlePrev} alt="Previous" className='arrow'/>
                     {
                         filteredData.map((item, i) => 
                         <div className="slide-wrapper" key={i}>
@@ -55,23 +60,27 @@ function Reviews() {
                         </div>
                         )
                     }
-                    <img src="/images/cooliconafblue.png" onClick={handleClick} alt="Previous" className='arrow'/>
+                    <img src="/images/cooliconafblue.png" onClick={handleNext} alt="Previous" className='arrow'/>
                 </div>
+            </div>
             </div>
         </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
-    max-width: 1440px;
+width: 100%;
+background: #F5FCFF;
+    .all {
+      max-width: 1440px;
     margin: 0% auto;
-    height: 563px;
+    height: auto;
     flex-shrink: 0;
-    background: #F5FCFF;
     padding: 50px 150px;
     display: flex;
     align-items: center;
     justify-content: center;
+    }
 
     .wrapper {
         margin: 0% auto;
@@ -154,11 +163,14 @@ const Wrapper = styled.div`
     }
 
     @media (max-width: 1023px) {
-        width: 100%;
+        
+        .all {
+          width: 100%;
         padding: 40px;
         flex-direction: column;
         justify-content: flex-start;
         height: auto;
+        }
     
         .wrapper {
             width: 100%;
@@ -181,7 +193,9 @@ const Wrapper = styled.div`
       }
 
       @media (max-width: 767px) {
-        padding: 30px;
+        .all {
+          padding: 30px;
+        }
     
         .content1 {
           margin-bottom: 30px;
@@ -193,7 +207,9 @@ const Wrapper = styled.div`
         }
       }
       @media (max-width: 560px) {
-        padding: 20px;
+        .all {
+          padding: 20px;
+        }
     
         .content1 {
           margin-bottom: 20px;
@@ -209,6 +225,7 @@ const Wrapper = styled.div`
         }
     
         .slide-wrapper {
+          width: 100%;
           padding: 30px;
         }
     
