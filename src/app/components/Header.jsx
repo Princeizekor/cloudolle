@@ -96,7 +96,7 @@ background-color: black;
         .slide-wrapper {
             position: relative;
             width: 100%;
-            height: 700px;
+            max-height: 700px;
             display: flex;
             padding: 0px 310px;
             flex-direction: column;
@@ -117,7 +117,7 @@ background-color: black;
         .detail {
             color: #FFF;
             text-align: center;
-            font-size: 10px;
+            font-size: 15px;
             font-style: normal;
             font-weight: 300;
             line-height: 27px;
