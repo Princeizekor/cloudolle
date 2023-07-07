@@ -51,7 +51,7 @@ function Header() {
 
     setTimeout(() => {
         handleClick()
-    }, 5000);
+    }, 10000);
     return (
         <Wrapper>
             <Swiper

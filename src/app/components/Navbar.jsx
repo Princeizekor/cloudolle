@@ -1,6 +1,8 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 function Navbar() {
   const Solution = {
@@ -127,7 +129,7 @@ function Navbar() {
         <li>Careers</li>
         <li>About Us</li>
       </ul>
-      <img src={imgs} alt="hamperbar" className="drop" onClick={toggleDropdown} />
+      <FontAwesomeIcon icon={faBars} className="drop" onClick={toggleDropdown}/>
     </Wrapper>
   );
 }
@@ -204,6 +206,9 @@ const Wrapper = styled.div`
   line-height: normal;
   }
   .drop {
+    color: #39C;
+    width: 40px;
+    height: 40px;
     display: none;
   }
   @media (max-width: 900px) {
