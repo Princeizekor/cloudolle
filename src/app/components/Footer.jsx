@@ -49,56 +49,56 @@ function Footer() {
   return (
     <Wrapper>
       <div className="all">
-      <div className="wrapper">
-        <div className="solution">
-          <p className='top'>{Solution.solution}</p>
-          <p>{Solution.eGovernor}</p>
-          <p>{Solution.finance}</p>
-          <p>{Solution.customer}</p>
-          <p>{Solution.manager}</p>
-          <p>{Solution.cloud}</p>
-          <p>{Solution.data}</p>
-          <p>{Solution.application}</p>
-          <p>{Solution.licence}</p>
+        <div className="wrapper">
+          <div className="solution">
+            <p className='top'>{Solution.solution}</p>
+            <p>{Solution.eGovernor}</p>
+            <p>{Solution.finance}</p>
+            <p>{Solution.customer}</p>
+            <p>{Solution.manager}</p>
+            <p>{Solution.cloud}</p>
+            <p>{Solution.data}</p>
+            <p>{Solution.application}</p>
+            <p>{Solution.licence}</p>
+          </div>
+          <div className="solution">
+            <p className='top'>{Tech.tech}</p>
+            <p>{Tech.micro1}</p>
+            <p>{Tech.micro2}</p>
+            <p>{Tech.micro3}</p>
+            <p>{Tech.micro4}</p>
+            <p>{Tech.micro5}</p>
+            <p>{Tech.micro6}</p>
+            <p>{Tech.micro7}</p>
+            <p>{Tech.micro8}</p>
+          </div>
+          <div className="solution">
+            <p className='top'>{Inovate.inovate}</p>
+            <p>{Inovate.skill}</p>
+            <p>{Inovate.client}</p>
+            <p>{Inovate.product}</p>
+          </div>
+          <div className="solution">
+            <p className='top'>{About.about}</p>
+            <p>{About.who}</p>
+            <p>{About.team}</p>
+            <p>{About.path}</p>
+            <p>{About.career}</p>
+            <p>{About.grad}</p>
+            <p>{About.contact}</p>
+          </div>
+          <div className="solution">
+            <p className='top'>{Resource.resource}</p>
+            <p>{Resource.success}</p>
+            <p>{Resource.blog}</p>
+            <p>{Resource.news}</p>
+          </div>
         </div>
-        <div className="solution">
-          <p className='top'>{Tech.tech}</p>
-          <p>{Tech.micro1}</p>
-          <p>{Tech.micro2}</p>
-          <p>{Tech.micro3}</p>
-          <p>{Tech.micro4}</p>
-          <p>{Tech.micro5}</p>
-          <p>{Tech.micro6}</p>
-          <p>{Tech.micro7}</p>
-          <p>{Tech.micro8}</p>
+        <div className="footer-icons">
+          <img src="/images/Logofooter.png" alt="footer logo" />
+          <img src="/images/socialssocial.png" alt="footer logo" />
+          <p>© 2022 Cloudolle. All rights reserved. </p>
         </div>
-        <div className="solution">
-          <p className='top'>{Inovate.inovate}</p>
-          <p>{Inovate.skill}</p>
-          <p>{Inovate.client}</p>
-          <p>{Inovate.product}</p>
-        </div>
-        <div className="solution">
-          <p className='top'>{About.about}</p>
-          <p>{About.who}</p>
-          <p>{About.team}</p>
-          <p>{About.path}</p>
-          <p>{About.career}</p>
-          <p>{About.grad}</p>
-          <p>{About.contact}</p>
-        </div>
-        <div className="solution">
-          <p className='top'>{Resource.resource}</p>
-          <p>{Resource.success}</p>
-          <p>{Resource.blog}</p>
-          <p>{Resource.news}</p>
-        </div>
-      </div>
-      <div className="footer-icons">
-        <img src="/images/Logofooter.png" alt="footer logo" />
-        <img src="/images/socialssocial.png" alt="footer logo" />
-        <p>© 2022 Cloudolle. All rights reserved. </p>
-      </div>
       </div>
     </Wrapper>
   )

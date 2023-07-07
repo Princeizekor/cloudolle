@@ -3,69 +3,69 @@ import React, { useState } from 'react'
 import { styled } from 'styled-components'
 
 function Reviews() {
-    const [data, setData] = useState(1)
-    const Data = [
-        {
-            id: 1,
-            img: '/images/Company1.png',
-            details: '“From a personal point of view, the app development has exceeded my expectations in terms of design and usability. The WSO team members are also praising [our custom mobile app] in terms of its design and the SharePoint backend.”',
-            name: 'Hillton Dannis',
-            comp: 'Capgemini',
-        },
-        {
-            id: 2,
-            img: '/images/Company12.png',
-            details: `Cloudolle's digitized capabilities transformed our health and life sciences organization. With EHR integration, telemedicine platforms, and data analytics, we achieved improved patient care, streamlined workflows, and enhanced research outcomes. Highly recommended for leveraging digital solutions in healthcare.`,
-            name: 'James Davidson',
-            comp: 'RSM',
-        },
-        {
-            id: 3,
-            img: '/images/Company9.png',
-            details: '“From a personal point of view, the app development has exceeded my expectations in terms of design and usability. The WSO team members are also praising [our custom mobile app] in terms of its design and the SharePoint backend.”',
-            name: 'Mathew Paulson',
-            comp: 'RSA',
-        },
-    ]
+  const [data, setData] = useState(1)
+  const Data = [
+    {
+      id: 1,
+      img: '/images/Company1.png',
+      details: '“From a personal point of view, the app development has exceeded my expectations in terms of design and usability. The WSO team members are also praising [our custom mobile app] in terms of its design and the SharePoint backend.”',
+      name: 'Hillton Dannis',
+      comp: 'Capgemini',
+    },
+    {
+      id: 2,
+      img: '/images/Company12.png',
+      details: `Cloudolle's digitized capabilities transformed our health and life sciences organization. With EHR integration, telemedicine platforms, and data analytics, we achieved improved patient care, streamlined workflows, and enhanced research outcomes. Highly recommended for leveraging digital solutions in healthcare.`,
+      name: 'James Davidson',
+      comp: 'RSM',
+    },
+    {
+      id: 3,
+      img: '/images/Company9.png',
+      details: '“From a personal point of view, the app development has exceeded my expectations in terms of design and usability. The WSO team members are also praising [our custom mobile app] in terms of its design and the SharePoint backend.”',
+      name: 'Mathew Paulson',
+      comp: 'RSA',
+    },
+  ]
 
-    const cooliconlack = '/images/cooliconblack.png'
+  const cooliconlack = '/images/cooliconblack.png'
 
-    const filteredData = Data.filter(item => item.id === data);
+  const filteredData = Data.filter(item => item.id === data);
 
-    const handleNext = () => {
-      data == 3 ? setData(1) : setData(data + 1)
-    }
+  const handleNext = () => {
+    data == 3 ? setData(1) : setData(data + 1)
+  }
 
-    const handlePrev = () => {
-      data == 1 ? setData(3) : setData(data - 1)
-    }
-    
-    return (
-        <Wrapper>
-            <div className="all">
-            <div className="wrapper">
-                <div className="content1">
-                    <h1 className='client-text'>See what our clients say about us, drawing from our experience and impact.</h1>
-                    <button className="client-success">Read client success stories <img src={cooliconlack} alt="cooliconlack" /></button>
+  const handlePrev = () => {
+    data == 1 ? setData(3) : setData(data - 1)
+  }
+
+  return (
+    <Wrapper>
+      <div className="all">
+        <div className="wrapper">
+          <div className="content1">
+            <h1 className='client-text'>See what our clients say about us, drawing from our experience and impact.</h1>
+            <button className="client-success">Read client success stories <img src={cooliconlack} alt="cooliconlack" /></button>
+          </div>
+          <div className="content2">
+            <img src="/images/cooliconabblue.png" onClick={handlePrev} alt="Previous" className='arrow' />
+            {
+              filteredData.map((item, i) =>
+                <div className="slide-wrapper" key={i}>
+                  <img src={item.img} alt="slide-image" />
+                  <p className='review'>{item.details}</p>
+                  <p className='name'>{item.name}</p>
+                  <p className='comp'>{item.comp}</p>
                 </div>
-                <div className="content2">
-                <img src="/images/cooliconabblue.png" onClick={handlePrev} alt="Previous" className='arrow'/>
-                    {
-                        filteredData.map((item, i) => 
-                        <div className="slide-wrapper" key={i}>
-                            <img src={item.img} alt="slide-image" />
-                            <p className='review'>{item.details}</p>
-                            <p className='name'>{item.name}</p>
-                            <p className='comp'>{item.comp}</p>
-                        </div>
-                        )
-                    }
-                    <img src="/images/cooliconafblue.png" onClick={handleNext} alt="Previous" className='arrow'/>
-                </div>
-            </div>
-            </div>
-        </Wrapper>
-    )
+              )
+            }
+            <img src="/images/cooliconafblue.png" onClick={handleNext} alt="Previous" className='arrow' />
+          </div>
+        </div>
+      </div>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.div`

@@ -55,31 +55,31 @@ function Header() {
     return (
         <Wrapper>
             <Swiper
-        spaceBetween={30}
-        effect={"fade"}
-        autoplay={{
-          delay: 8000,
-          disableOnInteraction: true,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Autoplay, EffectFade, Navigation, Pagination]}
-        className="wrapper"
-      >
-            {
-                filteredData.map((item, i) =>
-                    <SwiperSlide className="slide-wrapper" style={{ backgroundImage: `url('${item.img}')` }} key={i}>
-                        <p className='title'>{item.title}</p>
-                        <p className='detail'>{item.details}</p>
-                        <div>
-                        <button onClick={handlePrev}></button>
-                        <button onClick={handleMiddle}></button>
-                        <button onClick={handleNext}></button>
-                        </div>
-                    </SwiperSlide>
-                )
-            }
+                spaceBetween={30}
+                effect={"fade"}
+                autoplay={{
+                    delay: 8000,
+                    disableOnInteraction: true,
+                }}
+                pagination={{
+                    clickable: true,
+                }}
+                modules={[Autoplay, EffectFade, Navigation, Pagination]}
+                className="wrapper"
+            >
+                {
+                    filteredData.map((item, i) =>
+                        <SwiperSlide className="slide-wrapper" style={{ backgroundImage: `url('${item.img}')` }} key={i}>
+                            <p className='title'>{item.title}</p>
+                            <p className='detail'>{item.details}</p>
+                            <div>
+                                <button onClick={handlePrev}></button>
+                                <button onClick={handleMiddle}></button>
+                                <button onClick={handleNext}></button>
+                            </div>
+                        </SwiperSlide>
+                    )
+                }
             </Swiper>
         </Wrapper>
     )

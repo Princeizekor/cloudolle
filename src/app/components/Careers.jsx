@@ -2,82 +2,82 @@
 import React from 'react'
 import { styled } from 'styled-components'
 function Careers() {
-    const Text = `Just like we care about our clients, we also care about the people. We invest in our business success by making sure our employees are supported by a welcoming, diverse workplace that encourages a healthy work/life balance. Find out what it's like to work in cloudolle and take a look at some of our latest openings.`
-    const img = '/images/coolicon.png'
-    const Data = [
-        {
-            id: 1,
-            img: '/images/card.png',
-            title: 'Developments',
-            content: 'Senior Dynamics 365 Consultant',
-            arrow: '/images/coolicons.png',
-            more: 'Learn more',
-            blur: '/images/BG_Whiteblur.png'
-        },
-        {
-            id: 2,
-            img: '/images/card2.png',
-            title: 'HR & Admins',
-            content: 'Admin Staff',
-            arrow: '/images/coolicons.png',
-            more: 'Learn more',
-            blur: '/images/BG_Whiteblur.png'
-        },
-        {
-            id: 3,
-            img: '/images/card5.png',
-            title: 'Design',
-            content: 'Product Design',
-            arrow: '/images/coolicons.png',
-            more: 'Learn more',
-            blur: '/images/BG_Whiteblur.png'
-        },
-        {
-            id: 4,
-            img: '/images/card4.png',
-            title: 'Support',
-            content: 'Support Engineer',
-            arrow: '/images/coolicons.png',
-            more: 'Learn more',
-            blur: '/images/BG_Whiteblur.png'
-        },
-        {
-            id: 5,
-            img: '/images/card3.png',
-            title: 'Marketing',
-            content: 'Social Media Marketing',
-            arrow: '/images/coolicons.png',
-            more: 'Learn more',
-            blur: '/images/BG_Whiteblur.png'
-        }
-    ]
-    return (
-        <Wrapper>
-            <div className="wrapper">
-            <div className='headText'>
-                <h1>Careers at Cloudolle</h1>
-                <p className='headText2'>{Text}</p>
-            </div>
-            <button>See more <img src={img} alt="arrow" /></button>
-            <div className='cards'>
-                {
-                    Data.map((item, i) =>
-                        <div style={{ backgroundImage: `url('${item.img}')` }} key={i} className='cardWrapper'>
-                            <div style={{ backgroundImage: `url('${item.blur}')` }} className='cover'>
-                                <p>{item.more}</p>
-                                <p>{item.content}</p>
-                                <img src={item.arrow} alt="arrow-image" />
-                            </div>
-                            <h2>{item.title}</h2>
-                            <p>{item.content}</p>
-                            <img src={item.arrow} alt="arrow-image" />
-                        </div>
-                    )
-                }
-            </div>
-            </div>
-        </Wrapper>
-    )
+  const Text = `Just like we care about our clients, we also care about the people. We invest in our business success by making sure our employees are supported by a welcoming, diverse workplace that encourages a healthy work/life balance. Find out what it's like to work in cloudolle and take a look at some of our latest openings.`
+  const img = '/images/coolicon.png'
+  const Data = [
+    {
+      id: 1,
+      img: '/images/card.png',
+      title: 'Developments',
+      content: 'Senior Dynamics 365 Consultant',
+      arrow: '/images/coolicons.png',
+      more: 'Learn more',
+      blur: '/images/BG_Whiteblur.png'
+    },
+    {
+      id: 2,
+      img: '/images/card2.png',
+      title: 'HR & Admins',
+      content: 'Admin Staff',
+      arrow: '/images/coolicons.png',
+      more: 'Learn more',
+      blur: '/images/BG_Whiteblur.png'
+    },
+    {
+      id: 3,
+      img: '/images/card5.png',
+      title: 'Design',
+      content: 'Product Design',
+      arrow: '/images/coolicons.png',
+      more: 'Learn more',
+      blur: '/images/BG_Whiteblur.png'
+    },
+    {
+      id: 4,
+      img: '/images/card4.png',
+      title: 'Support',
+      content: 'Support Engineer',
+      arrow: '/images/coolicons.png',
+      more: 'Learn more',
+      blur: '/images/BG_Whiteblur.png'
+    },
+    {
+      id: 5,
+      img: '/images/card3.png',
+      title: 'Marketing',
+      content: 'Social Media Marketing',
+      arrow: '/images/coolicons.png',
+      more: 'Learn more',
+      blur: '/images/BG_Whiteblur.png'
+    }
+  ]
+  return (
+    <Wrapper>
+      <div className="wrapper">
+        <div className='headText'>
+          <h1>Careers at Cloudolle</h1>
+          <p className='headText2'>{Text}</p>
+        </div>
+        <button>See more <img src={img} alt="arrow" /></button>
+        <div className='cards'>
+          {
+            Data.map((item, i) =>
+              <div style={{ backgroundImage: `url('${item.img}')` }} key={i} className='cardWrapper'>
+                <div style={{ backgroundImage: `url('${item.blur}')` }} className='cover'>
+                  <p>{item.more}</p>
+                  <p>{item.content}</p>
+                  <img src={item.arrow} alt="arrow-image" />
+                </div>
+                <h2>{item.title}</h2>
+                <p>{item.content}</p>
+                <img src={item.arrow} alt="arrow-image" />
+              </div>
+            )
+          }
+        </div>
+      </div>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.div`

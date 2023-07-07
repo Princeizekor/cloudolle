@@ -45,35 +45,35 @@ function Technologies() {
   return (
     <Wrapper>
       <div className="wrapper">
-      <div className='headText'>
-        <h1>Technologies</h1>
-        <p className='headText2'>{Text}</p>
-      </div>
-      <button className='btn'>See more <img src={img} alt="arrow" /></button>
-      <div className='cards'>
-        <img src="/images/cooliconcback.png" alt="arrow-back" className='arrow' />
-        {
-          Data.map((item, i) =>
-            <div style={{ backgroundImage: `url('${item.img}')` }} key={i} className='cardWrapper'>
-              <div style={{ backgroundImage: `url('${item.blur}')` }} className='cover'>
-                <p>{item.more}</p>
+        <div className='headText'>
+          <h1>Technologies</h1>
+          <p className='headText2'>{Text}</p>
+        </div>
+        <button className='btn'>See more <img src={img} alt="arrow" /></button>
+        <div className='cards'>
+          <img src="/images/cooliconcback.png" alt="arrow-back" className='arrow' />
+          {
+            Data.map((item, i) =>
+              <div style={{ backgroundImage: `url('${item.img}')` }} key={i} className='cardWrapper'>
+                <div style={{ backgroundImage: `url('${item.blur}')` }} className='cover'>
+                  <p>{item.more}</p>
+                  <p>{item.content}</p>
+                  <img src={item.arrow} alt="arrow-image" />
+                </div>
+                <h2>{item.title}</h2>
                 <p>{item.content}</p>
                 <img src={item.arrow} alt="arrow-image" />
               </div>
-              <h2>{item.title}</h2>
-              <p>{item.content}</p>
-              <img src={item.arrow} alt="arrow-image" />
-            </div>
-          )
-        }
-        <img src="/images/cooliconcircle.png" alt="arrow-forward" className='arrow' />
-      </div>
+            )
+          }
+          <img src="/images/cooliconcircle.png" alt="arrow-forward" className='arrow' />
+        </div>
       </div>
     </Wrapper>
   )
 }
 
-const Wrapper = styled.div `
+const Wrapper = styled.div`
 width: 100%;
 background: #39C;
   .wrapper {

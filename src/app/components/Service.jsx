@@ -3,49 +3,49 @@ import React from "react";
 import { styled } from "styled-components";
 
 function Service() {
-const Data = [
-   {
+  const Data = [
+    {
       id: 1,
       img: '/images/BG_White.png',
       title: "Cloud Engineering",
-   },
-   {
-       id: 2,
-       img: '/images/BG_White (1).png',
-       title: "Data & AI Solutions",
     },
     {
-       id: 3,
-       img: '/images/BG_White (2).png',
-       title: "DevOps Automation",
+      id: 2,
+      img: '/images/BG_White (1).png',
+      title: "Data & AI Solutions",
     },
     {
-       id: 4,
-       img: '/images/BG_White (3).png',
-       title: "Application Development", 
+      id: 3,
+      img: '/images/BG_White (2).png',
+      title: "DevOps Automation",
     },
     {
-       id: 5,
-       img: '/images/BG_White (4).png',
-       title: "Managed Services",
+      id: 4,
+      img: '/images/BG_White (3).png',
+      title: "Application Development",
     },
     {
-       id: 6,
-       img: '/images/BG_White (5).png',
-       title: "eGovernment", 
+      id: 5,
+      img: '/images/BG_White (4).png',
+      title: "Managed Services",
     },
     {
-       id: 7,
-       img: '/images/BG_White (6).png',
-       title: "Finance Transformation", 
+      id: 6,
+      img: '/images/BG_White (5).png',
+      title: "eGovernment",
     },
     {
-       id: 8,
-       img: '/images/BG_White (7).png',
-       title: "Customer Experience", 
+      id: 7,
+      img: '/images/BG_White (6).png',
+      title: "Finance Transformation",
     },
-];
-const Text = `In a field where commitments are often unfulfilled, we deliver results.
+    {
+      id: 8,
+      img: '/images/BG_White (7).png',
+      title: "Customer Experience",
+    },
+  ];
+  const Text = `In a field where commitments are often unfulfilled, we deliver results.
 With a proven track record of success, including the completion of numerous projects for over 100 clients, we bring about significant changes in both workforce dynamics and business operations.`
   return (
     <Wrapper>
@@ -61,11 +61,11 @@ With a proven track record of success, including the completion of numerous proj
             </section>
             <p>{item.title}</p>
             <button className="colors">
-            <span className="brown"></span>
-            <span className="red"></span>
-            <span className="yellow"></span>
+              <span className="brown"></span>
+              <span className="red"></span>
+              <span className="yellow"></span>
             </button>
-            <img src="/images/coolicons.png" alt="arrow" className="arrow"/>
+            <img src="/images/coolicons.png" alt="arrow" className="arrow" />
           </div>
         ))}
       </Services>
@@ -173,6 +173,9 @@ const Services = styled.div`
   &:hover p {
     transform: translateY(-180px);
     color: #FFF;
+  }
+  &:hover .colors {
+    display: none;
   }
  }
 

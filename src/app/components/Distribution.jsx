@@ -3,31 +3,32 @@ import React from 'react'
 import { styled } from 'styled-components'
 
 function Distribution() {
-    const Text1 = `We believe that IT projects should not be viewed as risky.
+  const img = '/images/coolicon.png'
+  const Text1 = `We believe that IT projects should not be viewed as risky.
     To eliminate this perception, we make two guarantees to our clients:`
-    const Text2 = `We act ethically and responsibly.`
-    const Text3 = `Our team is dedicated to ensuring the success of your organization. By utilizing a combination of proven methods and technologies, as well as a tailored approach, we provide comprehensive support for your digital transformation initiatives.`
-    const Text4 = `We handle the distribution.`
-    const Text5 = `We tailor our methodology to fit your unique requirements, with a strong emphasis on establishing a solid foundation. By continuously experimenting with new delivery techniques, we strive to constantly enhance the quality of our service.`
-    return (
-        <Wrapper>
-            <div className="wrapper">
-            <h2 className='text1'>{Text1}</h2>
-            <div className='TextWrap'>
-            <h1 className='text2'>{Text2}</h1>
-            <p className='text3'>{Text3}</p>
-            <button className='btn'>More about us</button>
-            </div>
-            <div className='TextWrap'>
-                <h1 className='text2'>{Text4}</h1>
-                <p className='text3'>{Text5}</p>
-            </div>
-            </div>
-        </Wrapper>
-    )
+  const Text2 = `We act ethically and responsibly.`
+  const Text3 = `Our team is dedicated to ensuring the success of your organization. By utilizing a combination of proven methods and technologies, as well as a tailored approach, we provide comprehensive support for your digital transformation initiatives.`
+  const Text4 = `We handle the distribution.`
+  const Text5 = `We tailor our methodology to fit your unique requirements, with a strong emphasis on establishing a solid foundation. By continuously experimenting with new delivery techniques, we strive to constantly enhance the quality of our service.`
+  return (
+    <Wrapper>
+      <div className="wrapper">
+        <h2 className='text1'>{Text1}</h2>
+        <div className='TextWrap'>
+          <h1 className='text2'>{Text2}</h1>
+          <p className='text3'>{Text3}</p>
+          <button className='btn'>More about us <img src={img} alt="arrow" /></button>
+        </div>
+        <div className='TextWrap'>
+          <h1 className='text2'>{Text4}</h1>
+          <p className='text3'>{Text5}</p>
+        </div>
+      </div>
+    </Wrapper>
+  )
 }
 
-const Wrapper = styled.div `
+const Wrapper = styled.div`
 width: 100%;
 background-color: black;
     .wrapper {
@@ -70,6 +71,11 @@ background-color: black;
 }
 
 .btn {
+  position: absolute;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
     color: #FFF;
     margin-top: 50px;
 font-size: 16px;

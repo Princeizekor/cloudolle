@@ -78,8 +78,8 @@ function Companies() {
             <h1 className='title'>Companies we’ve worked with</h1>
             <div className='wrapper'>
                 {
-                    Data.map((item, i) => 
-                    <img src={item.img} alt="logo" key={i}/>
+                    Data.map((item, i) =>
+                        <img src={item.img} alt="logo" key={i} />
                     )
                 }
             </div>

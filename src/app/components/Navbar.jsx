@@ -62,18 +62,18 @@ function Navbar() {
     setOpenDrop(false);
     setOpenDrops(false);
   };
-  
+
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll); 
+    window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   });
   return (
     <Wrapper>
-      <img src='/images/Cloudolle logo.png'/>
+      <img src='/images/Cloudolle logo.png' />
       <ul className={isOpen ? "buttons show" : "hide buttons"}>
         <li className='sol' >
           <p onClick={toggleDrop}>Solutions</p>
-          <div className='solutions' style={open ? {display: 'flex', height: 'auto', left: 0} : {height: '0%', left: '-100%', overflow: 'hidden'}}>
+          <div className='solutions' style={open ? { display: 'flex', height: 'auto', left: 0 } : { height: '0%', left: '-100%', overflow: 'hidden' }}>
             <ul>
               <li>{Solution.eGovernor}</li>
               <li>{Solution.cloud}</li>
@@ -91,8 +91,8 @@ function Navbar() {
         </li>
 
         <li className='tech'>
-        <p onClick={toggleOpenDrop}>Technologies</p>
-          <div className='technologies'style={openDrop ? {display: 'flex', height: 'auto', left: 0} : {height: '0%', left: '-100%', overflow: 'hidden'}}>
+          <p onClick={toggleOpenDrop}>Technologies</p>
+          <div className='technologies' style={openDrop ? { display: 'flex', height: 'auto', left: 0 } : { height: '0%', left: '-100%', overflow: 'hidden' }}>
             <ul>
               <li>{Tech.overview}</li>
               <li>{Tech.micro1}</li>
@@ -110,7 +110,7 @@ function Navbar() {
         </li>
         <li className='indus'>
           <p onClick={toggleOpenDrops}>Industries</p>
-          <div className='industry' style={openDrops ? {display: 'flex', height: 'auto', left: 0} : {height: '0%', left: '-100%', overflow: 'hidden'}}>
+          <div className='industry' style={openDrops ? { display: 'flex', height: 'auto', left: 0 } : { height: '0%', left: '-100%', overflow: 'hidden' }}>
             <ul>
               <li>{Industry.overview}</li>
               <li>{Industry.public}</li>
@@ -127,7 +127,7 @@ function Navbar() {
         <li>Careers</li>
         <li>About Us</li>
       </ul>
-      <img src={imgs} alt="hamperbar" className="drop" onClick={toggleDropdown}/>
+      <img src={imgs} alt="hamperbar" className="drop" onClick={toggleDropdown} />
     </Wrapper>
   );
 }

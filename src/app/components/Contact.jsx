@@ -3,7 +3,7 @@ import React from 'react'
 import { styled } from 'styled-components'
 
 function Contact() {
-    const Text = `Let us bring about a significant effect for your company.`
+  const Text = `Let us bring about a significant effect for your company.`
   return (
     <Wrapper>
       <div className='content'>
@@ -14,7 +14,7 @@ function Contact() {
   )
 }
 
-const Wrapper = styled.div `
+const Wrapper = styled.div`
   background-color: white;
   width: 100%;
   height: 500px;
