@@ -1,6 +1,7 @@
 'use client'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import StyledComponentsRegistry from './registry'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <title>Cloudolle Landing Page</title>
       <body className={inter.className}>
-        {children}
+      <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
     </html>
   )
