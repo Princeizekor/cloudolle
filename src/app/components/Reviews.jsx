@@ -227,10 +227,11 @@ background: #F5FCFF;
         .slide-wrapper {
           width: 100%;
           padding: 30px;
+          text-align: center;
         }
     
         .review {
-          font-size: 18px;
+          font-size: 15px;
           line-height: 130%;
         }
     

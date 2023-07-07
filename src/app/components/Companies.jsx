@@ -145,6 +145,11 @@ const Wrapper = styled.div`
     
         .wrapper {
           margin-top: 60px;
+          img {
+            width: 70px;
+            height: 50px;
+            object-fit: contain;
+          }
         }
       }
 `

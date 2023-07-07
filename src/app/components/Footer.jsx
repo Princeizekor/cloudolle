@@ -94,6 +94,7 @@ function Footer() {
             <p>{Resource.news}</p>
           </div>
         </div>
+        <hr style={{marginTop: '50px',}}/>
         <div className="footer-icons">
           <img src="/images/Logofooter.png" alt="footer logo" />
           <img src="/images/socialssocial.png" alt="footer logo" />
