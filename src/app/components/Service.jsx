@@ -234,6 +234,9 @@ const Services = styled.div`
     font-size: 15px;
   }
   }
+  .colors {
+    width: 20%;
+  }
   }
   @media (max-width: 760px) {
     display: flex;

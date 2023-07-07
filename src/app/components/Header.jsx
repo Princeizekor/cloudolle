@@ -1,6 +1,14 @@
 'use client'
 import React, { useState } from 'react'
 import { styled } from 'styled-components'
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 
 function Header() {
     const [data, setData] = useState(1)
@@ -46,10 +54,22 @@ function Header() {
     }, 5000);
     return (
         <Wrapper>
-            <div className="wrapper">
+            <Swiper
+        spaceBetween={30}
+        effect={"fade"}
+        autoplay={{
+          delay: 8000,
+          disableOnInteraction: true,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Autoplay, EffectFade, Navigation, Pagination]}
+        className="wrapper"
+      >
             {
                 filteredData.map((item, i) =>
-                    <div className="slide-wrapper" style={{ backgroundImage: `url('${item.img}')` }} key={i}>
+                    <SwiperSlide className="slide-wrapper" style={{ backgroundImage: `url('${item.img}')` }} key={i}>
                         <p className='title'>{item.title}</p>
                         <p className='detail'>{item.details}</p>
                         <div>
@@ -57,10 +77,10 @@ function Header() {
                         <button onClick={handleMiddle}></button>
                         <button onClick={handleNext}></button>
                         </div>
-                    </div>
+                    </SwiperSlide>
                 )
             }
-            </div>
+            </Swiper>
         </Wrapper>
     )
 }
@@ -89,7 +109,7 @@ background-color: black;
             color: #FFF;
             margin-bottom: 30px;
             text-align: center;
-            font-size: 65px;
+            font-size: 50px;
             font-style: normal;
             font-weight: 500;
             line-height: 110%;
@@ -97,7 +117,7 @@ background-color: black;
         .detail {
             color: #FFF;
             text-align: center;
-            font-size: 12px;
+            font-size: 10px;
             font-style: normal;
             font-weight: 300;
             line-height: 27px;
@@ -152,7 +172,11 @@ background-color: black;
             padding: 0px 50px;
         }
         @media (max-width: 560px) {
+            .wrapper {
+                height: 400px;
+            }
             .slide-wrapper {
+                height: auto;
                 padding: 0px 30px;
             }
         .title {

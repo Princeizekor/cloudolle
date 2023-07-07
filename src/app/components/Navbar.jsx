@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
 
 function Navbar() {
@@ -36,17 +36,41 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [openDrop, setOpenDrop] = useState(false);
+  const [openDrops, setOpenDrops] = useState(false);
 
-  const toggleDropdown =()=> {
+  const toggleDropdown = () => {
     setIsOpen(!isOpen);
   }
-  const toggleDrop =()=> {
+  const toggleDrop = () => {
     setOpen(!open);
+    setOpenDrop(false);
+    setOpenDrops(false);
   }
+  const toggleOpenDrop = () => {
+    setOpenDrop(!openDrop);
+    setOpen(false)
+    setOpenDrops(false);
+  }
+  const toggleOpenDrops = () => {
+    setOpenDrops(!openDrops);
+    setOpenDrop(false);
+    setOpen(false)
+  }
+  const handleScroll = () => {
+    setIsOpen(false);
+    setOpen(false);
+    setOpenDrop(false);
+    setOpenDrops(false);
+  };
+  
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll); 
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
   return (
     <Wrapper>
       <img src='/images/Cloudolle logo.png'/>
-      <ul className='buttons' style={!isOpen ? {height: 'auto', left: 0} : {left: '-100%', overflow: 'hidden'}}>
+      <ul className={isOpen ? "buttons show" : "hide buttons"}>
         <li className='sol' >
           <p onClick={toggleDrop}>Solutions</p>
           <div className='solutions' style={open ? {display: 'flex', height: 'auto', left: 0} : {height: '0%', left: '-100%', overflow: 'hidden'}}>
@@ -67,8 +91,8 @@ function Navbar() {
         </li>
 
         <li className='tech'>
-        <p onClick={toggleDrop}>Technologies</p>
-          <div className='technologies'style={open ? {display: 'flex', height: 'auto', left: 0} : {height: '0%', left: '-100%', overflow: 'hidden'}}>
+        <p onClick={toggleOpenDrop}>Technologies</p>
+          <div className='technologies'style={openDrop ? {display: 'flex', height: 'auto', left: 0} : {height: '0%', left: '-100%', overflow: 'hidden'}}>
             <ul>
               <li>{Tech.overview}</li>
               <li>{Tech.micro1}</li>
@@ -85,8 +109,8 @@ function Navbar() {
           <img src={img} alt="button-down" />
         </li>
         <li className='indus'>
-          Industries
-          <div className='industry' style={!isOpen ? {height: 'auto', left: 0} : {left: '-100%', overflow: 'hidden'}}>
+          <p onClick={toggleOpenDrops}>Industries</p>
+          <div className='industry' style={openDrops ? {display: 'flex', height: 'auto', left: 0} : {height: '0%', left: '-100%', overflow: 'hidden'}}>
             <ul>
               <li>{Industry.overview}</li>
               <li>{Industry.public}</li>
@@ -205,14 +229,20 @@ const Wrapper = styled.div`
       background-color: #FFF;
       align-items: flex-start;
       transition: 0.5s all ease;
+      display: none;
     }
     .indus,
     .tech,
     .sol {
-      // display: none;
       img {
         display: none;
       }
+    }
+    .show {
+      display: flex;
+    }
+    .hide {
+      display: none;
     }
     .industry,
     .technologies,

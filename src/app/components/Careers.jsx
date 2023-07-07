@@ -296,7 +296,7 @@ button {
     }
 
     .headText {
-      width: 90%;
+      width: 100%;
     }
 
     .headText h1 {
@@ -312,7 +312,7 @@ button {
     }
 
     .cardWrapper {
-      width: 160px;
+      width: 100%;
       height: 340px;
     }
 
