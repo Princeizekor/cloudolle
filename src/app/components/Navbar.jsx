@@ -72,7 +72,7 @@ function Navbar() {
       <img src='/images/Cloudolle logo.png' />
       <ul className={isOpen ? "buttons show" : "hide buttons"}>
         <li className='sol' >
-          <p onClick={toggleDrop}>Solutions</p>
+          <p onClick={toggleDrop} style={open ? {color: '#39C'} : {color: 'black'}}>Solutions</p>
           <div className='solutions' style={open ? { display: 'flex', height: 'auto', left: 0 } : { height: '0%', left: '-100%', overflow: 'hidden' }}>
             <ul>
               <li>{Solution.eGovernor}</li>
@@ -91,7 +91,7 @@ function Navbar() {
         </li>
 
         <li className='tech'>
-          <p onClick={toggleOpenDrop}>Technologies</p>
+          <p onClick={toggleOpenDrop} style={openDrop ? {color: '#39C'} : {color: 'black'}}>Technologies</p>
           <div className='technologies' style={openDrop ? { display: 'flex', height: 'auto', left: 0 } : { height: '0%', left: '-100%', overflow: 'hidden' }}>
             <ul>
               <li>{Tech.overview}</li>
@@ -109,7 +109,7 @@ function Navbar() {
           <img src={img} alt="button-down" />
         </li>
         <li className='indus'>
-          <p onClick={toggleOpenDrops}>Industries</p>
+          <p onClick={toggleOpenDrops} style={openDrops ? {color: '#39C'} : {color: 'black'}}>Industries</p>
           <div className='industry' style={openDrops ? { display: 'flex', height: 'auto', left: 0 } : { height: '0%', left: '-100%', overflow: 'hidden' }}>
             <ul>
               <li>{Industry.overview}</li>
@@ -161,9 +161,6 @@ const Wrapper = styled.div`
   .sol {
     position: relative;
     display: flex;
-  }
-  .buttons li:hover {
-    color: #39C;
   }
   .industry,
 .technologies,
