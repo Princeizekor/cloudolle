@@ -125,7 +125,7 @@ line-height: normal;
     }
 
     .btn {
-      margin-top: 30px;
+      display: none;
     }
   }
   @media (max-width: 560px) {
@@ -138,10 +138,6 @@ line-height: normal;
 
     .text3 {
       font-size: 15px;
-    }
-
-    .btn {
-      margin-top: 20px;
     }
   }
 
