@@ -1,17 +1,14 @@
 'use client'
 import React, { useState } from 'react'
-import { styled } from 'styled-components'
-import { Swiper, SwiperSlide } from "swiper/react";
 
-import "swiper/css";
-import "swiper/css/effect-fade";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 
 function Header() {
-    const [data, setData] = useState(1)
     const Data = [
         {
             id: 1,
@@ -34,159 +31,37 @@ function Header() {
             title: `Staying on top of emerging trends and technologies`,
         },
     ]
-    const filteredData = Data.filter(item => item.id === data);
-
-    const handleClick = () => {
-        data === 3 ? setData(1) : setData(data + 1)
-    }
-    const handlePrev = () => {
-        setData(1)
-    }
-    const handleMiddle = () => {
-        setData(2)
-    }
-    const handleNext = () => {
-        setData(3)
-    }
-
-    setTimeout(() => {
-        handleClick()
-    }, 10000);
     return (
-        <Wrapper>
+        <>
             <Swiper
                 spaceBetween={30}
-                effect={"fade"}
+                effect='fade'
+                navigation={false}
                 autoplay={{
                     delay: 8000,
                     disableOnInteraction: true,
-                }}
+                  }}
                 pagination={{
                     clickable: true,
                 }}
                 modules={[Autoplay, EffectFade, Navigation, Pagination]}
-                className="wrapper"
+                className="mySwiper"
             >
                 {
-                    filteredData.map((item, i) =>
-                        <SwiperSlide className="slide-wrapper" style={{ backgroundImage: `url('${item.img}')` }} key={i}>
-                            <p className='title'>{item.title}</p>
-                            <p className='detail'>{item.details}</p>
-                            <div>
-                                <button onClick={handlePrev}></button>
-                                <button onClick={handleMiddle}></button>
-                                <button onClick={handleNext}></button>
+                    Data.map((item, i) =>
+                        <SwiperSlide className="swipe-wrapper" style={{ backgroundImage: `url('${item.img}')` }} key={i}>
+                            <div className="swipe">
+                                <div>
+                                    <h1>{item.title}</h1>
+                                    <p>{item.details}</p>
+                                </div>
                             </div>
                         </SwiperSlide>
                     )
                 }
             </Swiper>
-        </Wrapper>
-    )
-}
-
-const Wrapper = styled.div`
-width: 100%;
-background-color: black;
-            .wrapper {
-                height: 700px;
-            max-width: 1440px;
-            margin: 0% auto;
+        </>
+    );
             }
-        .slide-wrapper {
-            position: relative;
-            width: 100%;
-            max-height: 700px;
-            display: flex;
-            padding: 0px 310px;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-size: cover;
-            // transition: 5s all ease;
-        }
-        .title {
-            color: #FFF;
-            margin-bottom: 30px;
-            text-align: center;
-            font-size: 50px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 110%;
-        }
-        .detail {
-            color: #FFF;
-            text-align: center;
-            font-size: 15px;
-            font-style: normal;
-            font-weight: 300;
-            line-height: 27px;
-        }
-
-        .slide-wrapper div {
-            position: absolute;
-            display: flex;
-            width: 150px;
-            justify-content: space-between;
-            align-items: center;
-            bottom: 50px;
-        }
-
-        .slide-wrapper div button {
-            width: 15px;
-            height: 15px;
-            background-color: white;
-            border-radius: 50%;
-        }
-        @media (max-width: 1023px) {
-            .wrapper {
-                height: 50vh;
-            width: 100%;
-            margin: 0%;
-            }
-        .slide-wrapper {
-            height: 50vh;
-            padding: 0px 150px;
-        }
-        .title {
-            margin-bottom: 30px;
-            font-size: 35px;
-            font-weight: 300;
-            line-height: 100%;
-        }
-        .detail {
-            line-height: 20px;
-        }
-
-        .slide-wrapper div {
-            width: 100px;
-            bottom: 20px;
-        }
-        }
-        @media (max-width: 767px) {
-            .wrapper {
-                height: 300px;
-            }
-        .slide-wrapper {
-            height: 300px;
-            padding: 0px 50px;
-        }
-        @media (max-width: 560px) {
-            .wrapper {
-                height: 400px;
-            }
-            .slide-wrapper {
-                height: auto;
-                padding: 0px 30px;
-            }
-        .title {
-            margin-bottom: 20px;
-            font-size: 30px;
-        }
-        .detail {
-            font-size: 10px;
-        }
-        }
-`
 
 export default Header

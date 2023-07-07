@@ -19,4 +19,76 @@ body {
   font-family: 'Hanken Grotesk', sans-serif;
 }
 
+.swipe-wrapper {
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 20px;
+}
+
+.swipe {
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 100%;
+  text-align: center;
+}
+
+.swipe div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 800px;
+}
+
+.swipe h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.swipe p {
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  background: white;
+  width: 13px;
+  height: 13px;
+  margin-bottom: 40px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .swipe h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+  }
+  
+  .swipe p {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .swipe div {
+    height: 100vh;
+    max-height: 700px;
+  }
+  .swipe h1 {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  
+  .swipe p {
+    font-size: 14px;
+  }
+}
+
 @tailwind utilities;
