@@ -112,6 +112,7 @@ line-height: normal;
     }
 
     .TextWrap {
+      margin: 25px;
       width: 100%;
       text-align: center;
     }
