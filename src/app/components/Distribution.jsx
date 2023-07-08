@@ -103,6 +103,7 @@ line-height: normal;
 
     .btn {
       margin-top: 40px;
+      display: none;
     }
 }
 @media (max-width: 767px) {

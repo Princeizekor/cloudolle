@@ -34,7 +34,7 @@ function Navbar() {
     util: 'Utilities',
   };
   const img = '/images/Header Buttonnav.png'
-  const imgs = '/images/hamburger.png'
+  const [data, setData] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [openDrop, setOpenDrop] = useState(false);
@@ -47,28 +47,33 @@ function Navbar() {
     setOpen(!open);
     setOpenDrop(false);
     setOpenDrops(false);
+    setData(true)
   }
   const toggleOpenDrop = () => {
     setOpenDrop(!openDrop);
     setOpen(false)
     setOpenDrops(false);
+    setData(true)
   }
   const toggleOpenDrops = () => {
     setOpenDrops(!openDrops);
     setOpenDrop(false);
     setOpen(false)
+    setData(true)
   }
   const handleScroll = () => {
     setIsOpen(false);
     setOpen(false);
     setOpenDrop(false);
     setOpenDrops(false);
+    setData(false)
   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   });
+  
   return (
     <Wrapper>
       <img src='/images/Cloudolle logo.png' />
@@ -130,6 +135,7 @@ function Navbar() {
         <li>About Us</li>
       </ul>
       <FontAwesomeIcon icon={faBars} className="drop" onClick={toggleDropdown}/>
+      <span onClick={handleScroll} className={data ? "body" : ""}></span>
     </Wrapper>
   );
 }
@@ -145,10 +151,6 @@ const Wrapper = styled.div`
   padding: 0px 50px;
   background-color: #FFF;
   z-index: 100000000;
-// img {
-//   width: 80px;
-//   height: 80px;
-// }
   .buttons {
     position: relative;
     cursor: pointer;
@@ -163,6 +165,9 @@ const Wrapper = styled.div`
   .sol {
     position: relative;
     display: flex;
+    p {
+      z-index: 100000000;
+    }
   }
   .industry,
 .technologies,
@@ -171,7 +176,7 @@ const Wrapper = styled.div`
     display: none;
     justify-content: space-between;
     padding: 30px;
-    top: 55px;
+    top: 46px;
     left: -200px;
     width: 500px;
     height: 239px;
@@ -179,22 +184,24 @@ const Wrapper = styled.div`
     background: #FFF;
     border-top: 5px solid #39C;
   }
+  
   .industry {
-    width: 400px;
+    width: 385px;
     height: 200px;
     left: -150px;
   }
-  // .indus:hover .industry,
-  // .tech:hover .technologies,
-  // .sol:hover .solutions {
-  //   display: flex;
-  // }
   .industry ul,
   .technologies ul,
   .solutions ul {
     display: flex;
     flex-direction: column;
     gap: 32px;
+    li {
+      z-index: 100000000;
+    }
+    li:hover {
+      color: black
+    }
   }
   .industry li,
   .technologies li,
@@ -210,6 +217,19 @@ const Wrapper = styled.div`
     width: 40px;
     height: 40px;
     display: none;
+  }
+  span {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.1);
+    display: none;
+    // z-index: -1;
+  }
+  .body {
+    display: block;
   }
   @media (max-width: 900px) {
     .buttons {
@@ -273,6 +293,9 @@ const Wrapper = styled.div`
   }
 
 @media (max-width: 600px) {
+  .buttons {
+    top: 75px;
+  }
   .industry,
     .technologies,
     .solutions {

@@ -32,11 +32,11 @@ function Reviews() {
 
   const filteredData = Data.filter(item => item.id === data);
 
-  const handleNext = () => {
+  const handleNextReview = () => {
     data == 3 ? setData(1) : setData(data + 1)
   }
 
-  const handlePrev = () => {
+  const handlePrevReview = () => {
     data == 1 ? setData(3) : setData(data - 1)
   }
 
@@ -49,7 +49,7 @@ function Reviews() {
             <button className="client-success">Read client success stories <img src={cooliconlack} alt="cooliconlack" /></button>
           </div>
           <div className="content2">
-            <img src="/images/cooliconabblue.png" onClick={handlePrev} alt="Previous" className='arrow' />
+            <img src="/images/cooliconabblue.png" onClick={handlePrevReview} alt="Previous" className='arrow' />
             {
               filteredData.map((item, i) =>
                 <div className="slide-wrapper" key={i}>
@@ -60,7 +60,7 @@ function Reviews() {
                 </div>
               )
             }
-            <img src="/images/cooliconafblue.png" onClick={handleNext} alt="Previous" className='arrow' />
+            <img src="/images/cooliconafblue.png" onClick={handleNextReview} alt="Previous" className='arrow' />
           </div>
         </div>
       </div>
@@ -138,14 +138,14 @@ background: #F5FCFF;
     .review {
         color: #000;
         transition: 1s all ease;
-        font-size: 20px;
+        font-size: 18px;
         font-style: normal;
         font-weight: 300;
         line-height: 150%;
     }
 
     .name {
-        margin-top: 30px;
+        margin-top: 15px;
         color: #39C;
         font-size: 18px;
         font-style: normal;
@@ -154,7 +154,7 @@ background: #F5FCFF;
     }
 
     .comp {
-        margin-top: 20px;
+        margin-top: 15px;
         color: #000;
         font-size: 18px;
         font-style: normal;
@@ -226,7 +226,8 @@ background: #F5FCFF;
     
         .slide-wrapper {
           width: 100%;
-          padding: 30px;
+          height: 400px;
+          padding: 15px;
           text-align: center;
         }
     

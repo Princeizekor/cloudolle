@@ -214,6 +214,7 @@ const Services = styled.div`
  
   @media (max-width: 1023px) {
     gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
     padding: 50px 0px;
   div {
   section {

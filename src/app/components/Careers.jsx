@@ -137,6 +137,8 @@ button {
 
 .cards {
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     width: 100%;
     margin-top: 50px;
     justify-content: space-between;

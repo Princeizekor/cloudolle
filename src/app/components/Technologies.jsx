@@ -131,6 +131,8 @@ background: #39C;
 
 .cards {
   display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
   width: 100%;
   margin-top: 50px;
   align-items: center;
@@ -214,6 +216,9 @@ background: #39C;
 
 .cards {
   width: 100%;
+}
+.arrow {
+  display: none;
 }
 }
 @media (max-width: 767px) {
