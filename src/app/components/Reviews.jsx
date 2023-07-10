@@ -226,7 +226,7 @@ background: #F5FCFF;
     
         .slide-wrapper {
           width: 100%;
-          height: 400px;
+          height: 450px;
           padding: 15px;
           text-align: center;
         }

@@ -98,7 +98,7 @@ function Footer() {
         <div className="footer-icons">
           <img src="/images/Logofooter.png" alt="footer logo" />
           <img src="/images/socialssocial.png" alt="footer logo" />
-          <p>© 2022 Cloudolle. All rights reserved. </p>
+          <p>© 2023 Cloudolle. All rights reserved. </p>
         </div>
       </div>
     </Wrapper>

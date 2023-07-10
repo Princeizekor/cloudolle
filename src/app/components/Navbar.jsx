@@ -79,8 +79,8 @@ function Navbar() {
       <img src='/images/Cloudolle logo.png' />
       <ul className={isOpen ? "buttons show" : "hide buttons"}>
         <li className='sol' >
-          <p onClick={toggleDrop} style={open ? {color: '#39C'} : {color: 'black'}}>Solutions</p>
-          <div className='solutions' style={open ? { display: 'flex', height: 'auto', left: 0 } : { height: '0%', left: '-100%', overflow: 'hidden' }}>
+          <p onClick={toggleDrop} style={open ? {color: '#39C'} : {color: 'black'}}>Solutions <img src={img} alt="button-down" /></p>
+          <div className='solutions' style={open ? { display: 'grid', height: 'auto', left: 0 } : { height: '0%', left: '-100%', overflow: 'hidden' }}>
             <ul>
               <li>{Solution.eGovernor}</li>
               <li>{Solution.cloud}</li>
@@ -94,12 +94,11 @@ function Navbar() {
               <li>{Solution.devOps}</li>
             </ul>
           </div>
-          <img src={img} alt="button-down" />
         </li>
 
         <li className='tech'>
-          <p onClick={toggleOpenDrop} style={openDrop ? {color: '#39C'} : {color: 'black'}}>Technologies</p>
-          <div className='technologies' style={openDrop ? { display: 'flex', height: 'auto', left: 0 } : { height: '0%', left: '-100%', overflow: 'hidden' }}>
+          <p onClick={toggleOpenDrop} style={openDrop ? {color: '#39C'} : {color: 'black'}}>Technologies <img src={img} alt="button-down" /></p>
+          <div className='technologies' style={openDrop ? { display: 'grid', height: 'auto', left: 0 } : { height: '0%', left: '-100%', overflow: 'hidden' }}>
             <ul>
               <li>{Tech.overview}</li>
               <li>{Tech.micro1}</li>
@@ -113,11 +112,10 @@ function Navbar() {
               <li>{Tech.oracle}</li>
             </ul>
           </div>
-          <img src={img} alt="button-down" />
         </li>
         <li className='indus'>
-          <p onClick={toggleOpenDrops} style={openDrops ? {color: '#39C'} : {color: 'black'}}>Industries</p>
-          <div className='industry' style={openDrops ? { display: 'flex', height: 'auto', left: 0 } : { height: '0%', left: '-100%', overflow: 'hidden' }}>
+          <p onClick={toggleOpenDrops} style={openDrops ? {color: '#39C'} : {color: 'black'}}>Industries<img src={img} alt="button-down" /></p>
+          <div className='industry' style={openDrops ? { display: 'grid', height: 'auto', left: 0 } : { height: '0%', left: '-100%', overflow: 'hidden' }}>
             <ul>
               <li>{Industry.overview}</li>
               <li>{Industry.public}</li>
@@ -129,7 +127,6 @@ function Navbar() {
               <li>{Industry.util}</li>
             </ul>
           </div>
-          <img src={img} alt="button-down" />
         </li>
         <li>Careers</li>
         <li>About Us</li>
@@ -166,7 +163,11 @@ const Wrapper = styled.div`
     position: relative;
     display: flex;
     p {
+      display: flex;
       z-index: 100000000;
+      height: 30px;
+      align-items: center;
+      justify-content: center
     }
   }
   .industry,
@@ -174,7 +175,7 @@ const Wrapper = styled.div`
   .solutions {
     position: absolute;
     display: none;
-    justify-content: space-between;
+    grid-template-columns: 1fr 1fr;
     padding: 30px;
     top: 46px;
     left: -200px;
@@ -183,6 +184,7 @@ const Wrapper = styled.div`
     flex-shrink: 0;
     background: #FFF;
     border-top: 5px solid #39C;
+    z-index: 1;
   }
   
   .industry {
@@ -226,7 +228,6 @@ const Wrapper = styled.div`
     left: 0;
     background: rgba(0, 0, 0, 0.1);
     display: none;
-    // z-index: -1;
   }
   .body {
     display: block;
@@ -242,7 +243,7 @@ const Wrapper = styled.div`
 
     .buttons {
       position: absolute;
-      top: 80px;
+      top: 77px;
       left: 0%;
       width: 100%;
       height: auto;
@@ -252,13 +253,6 @@ const Wrapper = styled.div`
       align-items: flex-start;
       transition: 0.5s all ease;
       display: none;
-    }
-    .indus,
-    .tech,
-    .sol {
-      img {
-        display: none;
-      }
     }
     .show {
       display: flex;
@@ -270,22 +264,17 @@ const Wrapper = styled.div`
     .technologies,
     .solutions {
       position: static;
-      width: auto;
+      width: 100%;
       height: auto;
       gap: 30px;
-      margin-top: 20px;
+      margin-top: 50px;
+      margin-left: -85px;
       padding: 20px;
-      border-top: none;
     }
     .industry {
       width: 100%;
       height: auto;
       left: auto;
-    }
-    .indus:hover .industry,
-    .tech:hover .technologies,
-    .sol:hover .solutions {
-      // display: none;
     }
     .drop {
       display: block;
@@ -299,7 +288,7 @@ const Wrapper = styled.div`
   .industry,
     .technologies,
     .solutions {
-      flex-direction: column;
+      grid-template-columns: 1fr;
     }
 }
 `;
