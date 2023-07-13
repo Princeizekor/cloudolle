@@ -289,6 +289,7 @@ const Wrapper = styled.div`
       position: static;
       pointer-events: all;
       height: auto;
+      width: auto;
       border-top: 6px solid #39c;
       margin-top: 30px;
       margin-left: -90px;
