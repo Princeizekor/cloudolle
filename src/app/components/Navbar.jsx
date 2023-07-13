@@ -80,7 +80,7 @@ function Navbar() {
       <ul className={isOpen ? "buttons show" : "hide buttons"}>
         <li className='sol' >
           <p onClick={toggleDrop} style={open ? {color: '#39C'} : {color: 'black'}}>Solutions <img src={img} alt="button-down" /></p>
-          <div className='solutions' style={open ? { display: 'grid', height: 'auto', left: 0 } : { height: '0%', left: '-100%', overflow: 'hidden' }}>
+          <div className={open === true ? 'solutions display' : 'solutions none'}>
             <ul>
               <li>{Solution.eGovernor}</li>
               <li>{Solution.cloud}</li>
@@ -98,7 +98,7 @@ function Navbar() {
 
         <li className='tech'>
           <p onClick={toggleOpenDrop} style={openDrop ? {color: '#39C'} : {color: 'black'}}>Technologies <img src={img} alt="button-down" /></p>
-          <div className='technologies' style={openDrop ? { display: 'grid', height: 'auto', left: 0 } : { height: '0%', left: '-100%', overflow: 'hidden' }}>
+          <div className={openDrop === true ? 'technologies display' : 'technologies none'}>
             <ul>
               <li>{Tech.overview}</li>
               <li>{Tech.micro1}</li>
@@ -115,7 +115,7 @@ function Navbar() {
         </li>
         <li className='indus'>
           <p onClick={toggleOpenDrops} style={openDrops ? {color: '#39C'} : {color: 'black'}}>Industries<img src={img} alt="button-down" /></p>
-          <div className='industry' style={openDrops ? { display: 'grid', height: 'auto', left: 0 } : { height: '0%', left: '-100%', overflow: 'hidden' }}>
+          <div className={openDrops === true ? 'industry display' : 'industry none'}>
             <ul>
               <li>{Industry.overview}</li>
               <li>{Industry.public}</li>
@@ -174,23 +174,36 @@ const Wrapper = styled.div`
 .technologies,
   .solutions {
     position: absolute;
-    display: none;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 30px;
     top: 46px;
-    left: -200px;
+    left: 0px;
     width: 500px;
     height: 239px;
     flex-shrink: 0;
     background: #FFF;
+    transition: 0.5s all ease;
+    cursor: auto;
     border-top: 5px solid #39C;
     z-index: 1;
+  }
+
+  .display {
+    opacity: 1;
+    pointer-events: all;
+    transition: 0.5s all ease;
+  }
+
+  .none {
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s all ease;
   }
   
   .industry {
     width: 385px;
     height: 200px;
-    left: -150px;
   }
   .industry ul,
   .technologies ul,
@@ -246,8 +259,9 @@ const Wrapper = styled.div`
       top: 77px;
       left: 0%;
       width: 100%;
-      height: auto;
+      height: 100vh;
       flex-direction: column;
+      justify-content: unset;
       padding: 30px;
       background-color: #FFF;
       align-items: flex-start;
@@ -263,18 +277,33 @@ const Wrapper = styled.div`
     .industry,
     .technologies,
     .solutions {
-      position: static;
-      width: 100%;
-      height: auto;
-      gap: 30px;
-      margin-top: 50px;
-      margin-left: -85px;
-      padding: 20px;
+      position: absolute;
+      padding: 30px;
+      border: none;
+      pointer-events: none;
+      height: 0;
+      overflow: hidden;
     }
-    .industry {
-      width: 100%;
+    
+    .display {
+      position: static;
+      pointer-events: all;
       height: auto;
-      left: auto;
+      border-top: 6px solid #39c;
+      margin-top: 30px;
+      margin-left: -90px;
+    }
+    .industry,
+    .solutions {
+      margin-left: -90px;
+    }
+    .technologies {
+      margin-left: -120px;
+    }
+    .none {
+      height: 0px;
+      top: 30px;
+      left: 0px;
     }
     .drop {
       display: block;
