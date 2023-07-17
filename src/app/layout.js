@@ -13,7 +13,10 @@ const inter = Inter({ subsets: ['latin'] })
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <title>Cloudolle Landing Page</title>
+      <head>
+    <title>Cloudolle Landing Page</title>
+    <meta name="description" content="Cloudolle Landing Page">
+    </head>
       <body className={inter.className}>
       <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
