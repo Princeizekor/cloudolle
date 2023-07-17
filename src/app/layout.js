@@ -15,7 +15,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
     <title>Cloudolle Landing Page</title>
-    <meta name="description" content="Cloudolle Landing Page">
     </head>
       <body className={inter.className}>
       <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
